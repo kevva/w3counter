@@ -30,6 +30,13 @@ w3counter('res', function (err, data) {
 Returns an array with the ten most popular items from the type you provided from
 [w3counter.com](http://www.w3counter.com/globalstats.php).
 
+Available types are:
+
+* `browser` — Ten most popular web browsers
+* `country` — Ten most popular countries
+* `os` — Ten most popular operating systems
+* `res` — Ten most popular screen resolutions
+
 ## License
 
 [MIT License](http://en.wikipedia.org/wiki/MIT_License) (c) [Kevin Mårtensson](https://github.com/kevva)
