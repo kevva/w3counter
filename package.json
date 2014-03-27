@@ -1,0 +1,39 @@
+{
+  "name": "w3counter",
+  "version": "0.1.0",
+  "description": "Get ten most popular web browsers",
+  "keywords": [
+    "browser",
+    "os",
+    "popular",
+    "screen",
+    "size",
+    "w3counter",
+  ],
+  "homepage": "https://github.com/kevva/w3counter",
+  "bugs": "https://github.com/kevva/w3counter/issues",
+  "author": {
+    "name": "Kevin Mårtensson",
+    "email": "kevinmartensson@gmail.com",
+    "url": "https://github.com/kevva"
+  },
+  "license": "MIT",
+  "repository": "git://github.com/kevva/w3counter.git",
+  "scripts": {
+    "test": "mocha --reporter list --timeout 0"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "cheerio": "^0.13.1",
+    "map-key": "^0.1.0"
+  },
+  "devDependencies": {
+    "mocha": "^1.18.2"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}
