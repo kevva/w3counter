@@ -28,8 +28,7 @@
   ],
   "dependencies": {
     "cheerio": "^0.13.1",
-    "got": "^0.1.0",
-    "map-key": "^0.1.0"
+    "got": "^0.1.0"
   },
   "devDependencies": {
     "mocha": "^1.18.2"

@@ -2,7 +2,6 @@
 
 var cheerio = require('cheerio');
 var got = require('got');
-var mapKey = require('map-key');
 
 /**
  * w3counter API
@@ -19,7 +18,7 @@ module.exports = function (type, cb) {
         os: 'Operating Systems',
         res: 'Screen Resolutions'
     };
-    var method = mapKey.equal(types, type);
+    var method = types[type];
     var ret = [];
 
     got('http://www.w3counter.com/globalstats.php', function (err, data) {
