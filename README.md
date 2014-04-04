@@ -1,13 +1,14 @@
 # w3counter [![Build Status](https://travis-ci.org/kevva/w3counter.png?branch=master)](http://travis-ci.org/kevva/w3counter)
 
-An API for w3counter to get the most popular countries, operating systems, screen
-resolutions and web browsers.
+> An API for w3counter to get the most popular countries, operating systems, screen resolutions and web browsers.
 
-## Getting started
+## Install
 
-Install with [npm](https://npmjs.org/package/w3counter): `npm install w3counter`
+```bash
+$ npm install --save w3counter
+```
 
-## Example
+## Usage
 
 ```js
 var w3counter = require('w3counter');
@@ -39,4 +40,4 @@ Available types are:
 
 ## License
 
-[MIT License](http://en.wikipedia.org/wiki/MIT_License) (c) [Kevin Mårtensson](https://github.com/kevva)
+[MIT License](http://en.wikipedia.org/wiki/MIT_License) © [Kevin Mårtensson](https://github.com/kevva)
