@@ -38,6 +38,29 @@ Available types are:
 * `os` — Ten most popular operating systems
 * `res` — Ten most popular screen resolutions
 
+## CLI
+
+You can also use it as a CLI app by installing it globally:
+
+```bash
+$ npm install --global w3counter
+```
+
+### Usage
+
+```bash
+$ w3counter --help
+
+Usage
+  $ w3counter <type>
+
+Example
+  $ w3counter browser
+  $ w3counter country
+  $ w3counter os
+  $ w3counter res
+```
+
 ## License
 
 [MIT License](http://en.wikipedia.org/wiki/MIT_License) © [Kevin Mårtensson](https://github.com/kevva)
