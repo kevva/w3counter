@@ -41,6 +41,19 @@ if (input.indexOf('-v') !== -1 || input.indexOf('--version') !== -1) {
 }
 
 /**
+ * Show error if no type is provided
+ */
+
+if (input.length === 0) {
+    console.error('Please provide a type. Available types are:');
+    console.error('  browser — Ten most popular web browsers');
+    console.error('  country — Ten most popular countries');
+    console.error('  os — Ten most popular operating systems');
+    console.error('  res — Ten most popular screen resolutions');
+    return;
+}
+
+/**
  * Run
  */
 
