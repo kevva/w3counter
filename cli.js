@@ -49,7 +49,8 @@ w3counter(input, function (err, types) {
         throw err;
     }
 
-    types.forEach(function (type) {
-        console.log(type);
+    types.forEach(function (type, i) {
+        i = i + 1;
+        console.log(i + '. ' + type);
     });
 });
