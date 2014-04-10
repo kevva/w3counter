@@ -1,4 +1,4 @@
-# w3counter [![Build Status](https://travis-ci.org/kevva/w3counter.png?branch=master)](http://travis-ci.org/kevva/w3counter)
+# w3counter [![Build Status](https://travis-ci.org/kevva/w3counter.svg?branch=master)](https://travis-ci.org/kevva/w3counter)
 
 > An API for w3counter to get the most popular countries, operating systems, screen resolutions and web browsers.
 
