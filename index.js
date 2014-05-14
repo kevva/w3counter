@@ -43,8 +43,6 @@ module.exports = function (type, cb) {
             return cb('Couldn\'t get any ' + method.toLowerCase());
         }
 
-        console.log(ret);
-
         cb(null, ret);
     });
 };
