@@ -64,6 +64,6 @@ w3counter(input, function (err, types) {
 
     types.forEach(function (type, i) {
         i = i + 1;
-        console.log(i + '. ' + type);
+        console.log(i + '. ' + type.item);
     });
 });
