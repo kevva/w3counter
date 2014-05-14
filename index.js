@@ -31,12 +31,19 @@ module.exports = function (type, cb) {
         $('th').filter(function () {
             return this.text() === method;
         }).parent().nextAll('.item').each(function () {
-            ret.push(this.text());
+            var obj = {
+                item: this.text(),
+                percent: $(this).next('.pct').text()
+            };
+
+            ret.push(obj);
         });
 
         if (ret.length === 0) {
             return cb('Couldn\'t get any ' + method.toLowerCase());
         }
+
+        console.log(ret);
 
         cb(null, ret);
     });
