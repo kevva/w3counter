@@ -31,12 +31,7 @@ module.exports = function (type, cb) {
         $('th').filter(function () {
             return this.text() === method;
         }).parent().nextAll('.item').each(function () {
-            var obj = {
-                item: this.text(),
-                percent: $(this).next('.pct').text()
-            };
-
-            ret.push(obj);
+            ret.push({ item: this.text(), percent: $(this).next('.pct').text() });
         });
 
         if (ret.length === 0) {
