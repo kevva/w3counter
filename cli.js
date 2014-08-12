@@ -27,8 +27,7 @@ function help() {
  */
 
 if (input.indexOf('-h') !== -1 || input.indexOf('--help') !== -1) {
-    help();
-    return;
+    return help();
 }
 
 /**
@@ -36,8 +35,7 @@ if (input.indexOf('-h') !== -1 || input.indexOf('--help') !== -1) {
  */
 
 if (input.indexOf('-v') !== -1 || input.indexOf('--version') !== -1) {
-    console.log(pkg.version);
-    return;
+    return console.log(pkg.version);
 }
 
 /**
@@ -50,7 +48,7 @@ if (input.length === 0) {
     console.error('  country — Ten most popular countries');
     console.error('  os — Ten most popular operating systems');
     console.error('  res — Ten most popular screen resolutions');
-    return;
+    process.exit(1);
 }
 
 /**
@@ -59,7 +57,8 @@ if (input.length === 0) {
 
 w3counter(input, function (err, types) {
     if (err) {
-        throw err;
+        console.error(err);
+        process.exit(1);
     }
 
     types.forEach(function (type, i) {
