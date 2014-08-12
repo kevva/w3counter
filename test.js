@@ -1,35 +1,40 @@
-/*global describe, it */
 'use strict';
 
-var assert = require('assert');
+var test = require('ava');
 var w3counter = require('./');
 
-describe('getBrowsers()', function () {
-    it('should fetch 10 web browsers', function (cb) {
-        w3counter('browser', function (err, data) {
-            assert.strictEqual(data.length, 10);
-            cb();
-        });
-    });
+test('fetch 10 web browsers', function (t) {
+    t.plan(2);
 
-    it('should fetch 10 countries', function (cb) {
-        w3counter('country', function (err, data) {
-            assert.strictEqual(data.length, 10);
-            cb();
-        });
+    w3counter('browser', function (err, data) {
+        t.assert(!err);
+        t.assert(data.length === 10);
     });
+});
 
-    it('should fetch 10 operating systems', function (cb) {
-        w3counter('os', function (err, data) {
-            assert.strictEqual(data.length, 10);
-            cb();
-        });
+test('fetch 10 countries', function (t) {
+    t.plan(2);
+
+    w3counter('country', function (err, data) {
+        t.assert(!err);
+        t.assert(data.length === 10);
     });
+});
 
-    it('should fetch 10 screen resolutions', function (cb) {
-        w3counter('res', function (err, data) {
-            assert.strictEqual(data.length, 10);
-            cb();
-        });
+test('fetch 10 operating systems', function (t) {
+    t.plan(2);
+
+    w3counter('os', function (err, data) {
+        t.assert(!err);
+        t.assert(data.length === 10);
+    });
+});
+
+test('fetch 10 screen resolutions', function (t) {
+    t.plan(2);
+
+    w3counter('res', function (err, data) {
+        t.assert(!err);
+        t.assert(data.length === 10);
     });
 });
