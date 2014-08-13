@@ -35,7 +35,7 @@ module.exports = function (type, cb) {
         });
 
         if (ret.length === 0) {
-            return cb('Couldn\'t get any ' + method.toLowerCase());
+            return cb(new Error('Couldn\'t get any ' + method.toLowerCase()));
         }
 
         cb(null, ret);
