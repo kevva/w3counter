@@ -14,11 +14,19 @@ $ npm install --save w3counter
 var w3counter = require('w3counter');
 
 w3counter('browser', function (err, data) {
+    if (err) {
+        throw err;
+    }
+
     console.log(data);
     // => [ { item: 'Chrome 34', percent: '20.71%' }, { item: 'Firefox 28', percent: '13.04%' }, ... ]
 });
 
 w3counter('res', function (err, data) {
+    if (err) {
+        throw err;
+    }
+
     console.log(data);
     // => [ { item: '1366x768', percent: '20.34%' }, { item: '1280x800', percent: '9.23%' }, ... ]
 });
