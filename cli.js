@@ -27,7 +27,8 @@ function help() {
  */
 
 if (input.indexOf('-h') !== -1 || input.indexOf('--help') !== -1) {
-    return help();
+    help();
+    return;
 }
 
 /**
@@ -35,7 +36,8 @@ if (input.indexOf('-h') !== -1 || input.indexOf('--help') !== -1) {
  */
 
 if (input.indexOf('-v') !== -1 || input.indexOf('--version') !== -1) {
-    return console.log(pkg.version);
+    console.log(pkg.version);
+    return;
 }
 
 /**

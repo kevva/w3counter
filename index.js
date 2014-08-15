@@ -23,7 +23,8 @@ module.exports = function (type, cb) {
 
     got('http://www.w3counter.com/globalstats.php', function (err, data) {
         if (err) {
-            return cb(err);
+            cb(err);
+            return;
         }
 
         var $ = cheerio.load(data);
@@ -35,7 +36,8 @@ module.exports = function (type, cb) {
         });
 
         if (ret.length === 0) {
-            return cb(new Error('Couldn\'t get any ' + method.toLowerCase()));
+            cb(new Error('Couldn\'t get any ' + method.toLowerCase()));
+            return;
         }
 
         cb(null, ret);

@@ -31,8 +31,8 @@
     "w3counter"
   ],
   "dependencies": {
-    "cheerio": "^0.13.1",
-    "got": "^0.1.0"
+    "cheerio": "^0.17.0",
+    "got": "^1.0.1"
   },
   "devDependencies": {
     "ava": "0.0.3"
