@@ -10,16 +10,19 @@ var w3counter = require('./');
  */
 
 function help() {
-    console.log(pkg.description);
-    console.log('');
-    console.log('Usage');
-    console.log('  $ w3counter <type>');
-    console.log('');
-    console.log('Example');
-    console.log('  $ w3counter browser');
-    console.log('  $ w3counter country');
-    console.log('  $ w3counter os');
-    console.log('  $ w3counter res');
+	console.log([
+		'',
+		pkg.description,
+		'',
+		'  Usage',
+		'    w3counter <type>',
+		'',
+		'  Example',
+		'    w3counter browser',
+		'    w3counter country',
+		'    w3counter os',
+		'    w3counter res'
+	].join('\n'));
 }
 
 /**
@@ -27,8 +30,8 @@ function help() {
  */
 
 if (input.indexOf('-h') !== -1 || input.indexOf('--help') !== -1) {
-    help();
-    return;
+	help();
+	return;
 }
 
 /**
@@ -36,21 +39,23 @@ if (input.indexOf('-h') !== -1 || input.indexOf('--help') !== -1) {
  */
 
 if (input.indexOf('-v') !== -1 || input.indexOf('--version') !== -1) {
-    console.log(pkg.version);
-    return;
+	console.log(pkg.version);
+	return;
 }
 
 /**
  * Show error if no type is provided
  */
 
-if (input.length === 0) {
-    console.error('Please provide a type. Available types are:');
-    console.error('  browser — Ten most popular web browsers');
-    console.error('  country — Ten most popular countries');
-    console.error('  os — Ten most popular operating systems');
-    console.error('  res — Ten most popular screen resolutions');
-    process.exit(1);
+if (!input.length) {
+	console.error([
+		'Please provide a type. Available types are:',
+		'  browser — Ten most popular web browsers',
+		'  country — Ten most popular countries',
+		'  os — Ten most popular operating systems',
+		'  res — Ten most popular screen resolutions'
+	].join('\n'));
+	process.exit(1);
 }
 
 /**
@@ -58,13 +63,13 @@ if (input.length === 0) {
  */
 
 w3counter(input, function (err, types) {
-    if (err) {
-        console.error(err);
-        process.exit(1);
-    }
+	if (err) {
+		console.error(err);
+		process.exit(1);
+	}
 
-    types.forEach(function (type, i) {
-        i = i + 1;
-        console.log(i + '. ' + type.item);
-    });
+	types.forEach(function (type, i) {
+		i = i + 1;
+		console.log(i + '. ' + type.item);
+	});
 });
