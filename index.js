@@ -24,6 +24,15 @@ module.exports = function (type, cb) {
 
 	got('http://www.w3counter.com/globalstats.php', function (err, data) {
 		if (err) {
+			if (!isNaN(err)) {
+				err = new Error(err);
+			}
+
+			if (err.message < 200 || err.message > 299) {
+				err.message = 'Couldn\'t connect to w3counter.com';
+				err.noStack = true;
+			}
+
 			cb(err);
 			return;
 		}
