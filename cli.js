@@ -64,7 +64,7 @@ if (!input.length) {
 
 w3counter(input, function (err, types) {
 	if (err) {
-		console.error(err);
+		console.error(err.message);
 		process.exit(1);
 	}
 
