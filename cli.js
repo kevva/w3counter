@@ -10,16 +10,34 @@ var w3counter = require('./');
 
 var cli = meow({
 	help: [
-		'  Usage',
-		'    w3counter <type>',
+		'Usage',
+		'  w3counter <type>',
 		'',
-		'  Example',
-		'    w3counter browser',
-		'    w3counter country',
-		'    w3counter os',
-		'    w3counter res'
+		'Example',
+		'  w3counter browser',
+		'  w3counter country',
+		'  w3counter os',
+		'  w3counter res'
 	].join('\n')
 });
+
+/**
+ * Check for arguments
+ */
+
+if (!cli.input.length) {
+	console.error([
+		'Provide a type',
+		'',
+		'Example',
+		'  w3counter browser',
+		'  w3counter country',
+		'  w3counter os',
+		'  w3counter res'
+	].join('\n'));
+
+	process.exit(1);
+}
 
 /**
  * Run
