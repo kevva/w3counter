@@ -3,14 +3,6 @@
 var cheerio = require('cheerio');
 var got = require('got');
 
-/**
- * w3counter API
- *
- * @param {String} type
- * @param {Function} cb
- * @api public
- */
-
 module.exports = function (type, cb) {
 	var types = {
 		browser: 'Web Browsers',
@@ -42,7 +34,7 @@ module.exports = function (type, cb) {
 		$('th').filter(function () {
 			return this.text() === method;
 		}).parent().nextAll('.item').each(function () {
-			ret.push({ item: this.text(), percent: $(this).next('.pct').text() });
+			ret.push({item: this.text(), percent: $(this).next('.pct').text()});
 		});
 
 		if (!ret.length) {

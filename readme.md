@@ -19,7 +19,7 @@ w3counter('browser', function (err, data) {
 	}
 
 	console.log(data);
-	//=> [ { item: 'Chrome 34', percent: '20.71%' }, { item: 'Firefox 28', percent: '13.04%' }, ... ]
+	//=> [{item: 'Chrome 34', percent: '20.71%'}, {item: 'Firefox 28', percent: '13.04%'}, ...]
 });
 
 w3counter('res', function (err, data) {
@@ -28,7 +28,7 @@ w3counter('res', function (err, data) {
 	}
 
 	console.log(data);
-	//=> [ { item: '1366x768', percent: '20.34%' }, { item: '1280x800', percent: '9.23%' }, ... ]
+	//=> [{item: '1366x768', percent: '20.34%'}, {item: '1280x800', percent: '9.23%'}, ...]
 });
 ```
 
@@ -39,12 +39,22 @@ w3counter('res', function (err, data) {
 Returns an array with the ten most popular items from the type you provided from
 [w3counter.com](http://www.w3counter.com/globalstats.php).
 
-Available types are:
+#### type
+
+Type: `String`
+
+What type of items to get. Available types are:
 
 * `browser` — Ten most popular web browsers
 * `country` — Ten most popular countries
 * `os` — Ten most popular operating systems
 * `res` — Ten most popular screen resolutions
+
+#### cb(err, data)
+
+Type: `Function`
+
+Returns an array with the items.
 
 ## CLI
 
