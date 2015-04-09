@@ -8,7 +8,7 @@ test('fetch 10 web browsers', function (t) {
 
 	w3counter('browser', function (err, data) {
 		t.assert(!err, err);
-		t.assert(data.length === 10);
+		t.assert(data.length === 10, data.length);
 	});
 });
 
@@ -17,7 +17,7 @@ test('fetch 10 countries', function (t) {
 
 	w3counter('country', function (err, data) {
 		t.assert(!err, err);
-		t.assert(data.length === 10);
+		t.assert(data.length === 10, data.length);
 	});
 });
 
@@ -26,7 +26,7 @@ test('fetch 10 operating systems', function (t) {
 
 	w3counter('os', function (err, data) {
 		t.assert(!err, err);
-		t.assert(data.length === 10);
+		t.assert(data.length === 10, data.length);
 	});
 });
 
@@ -35,6 +35,6 @@ test('fetch 10 screen resolutions', function (t) {
 
 	w3counter('res', function (err, data) {
 		t.assert(!err, err);
-		t.assert(data.length === 10);
+		t.assert(data.length === 10, data.length);
 	});
 });

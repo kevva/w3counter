@@ -4,6 +4,10 @@ var cheerio = require('cheerio');
 var got = require('got');
 
 module.exports = function (type, cb) {
+	if (typeof type !== 'string') {
+		throw new Error('Provide a type');
+	}
+
 	var types = {
 		browser: 'Web Browsers',
 		country: 'Countries',
