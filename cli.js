@@ -39,6 +39,6 @@ w3counter(cli.input, function (err, types) {
 
 	types.forEach(function (type, i) {
 		i = i + 1;
-		console.log(i + '. ' + type.item);
+		console.log(i + '. ' + type.item + ' (' + type.percent + ')');
 	});
 });
