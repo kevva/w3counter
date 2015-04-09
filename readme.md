@@ -2,11 +2,13 @@
 
 > An API for w3counter to get the most popular countries, operating systems, screen resolutions and web browsers
 
+
 ## Install
 
-```bash
+```
 $ npm install --save w3counter
 ```
+
 
 ## Usage
 
@@ -14,34 +16,28 @@ $ npm install --save w3counter
 var w3counter = require('w3counter');
 
 w3counter('browser', function (err, data) {
-	if (err) {
-		throw err;
-	}
-
 	console.log(data);
 	//=> [{item: 'Chrome 34', percent: '20.71%'}, {item: 'Firefox 28', percent: '13.04%'}, ...]
 });
 
 w3counter('res', function (err, data) {
-	if (err) {
-		throw err;
-	}
-
 	console.log(data);
 	//=> [{item: '1366x768', percent: '20.34%'}, {item: '1280x800', percent: '9.23%'}, ...]
 });
 ```
 
+
 ## API
 
-### w3counter(type, cb)
+### w3counter(type, callback)
 
 Returns an array with the ten most popular items from the type you provided from
 [w3counter.com](http://www.w3counter.com/globalstats.php).
 
 #### type
 
-Type: `String`
+*Required*  
+Type: `string`
 
 What type of items to get. Available types are:
 
@@ -50,30 +46,36 @@ What type of items to get. Available types are:
 * `os` — Ten most popular operating systems
 * `res` — Ten most popular screen resolutions
 
-#### cb(err, data)
+#### callback(err, data)
 
-Type: `Function`
+Type: `function`
 
-Returns an array with the items.
+##### data
+
+Type: `array`
+
+An array of objects containing the results.
+
 
 ## CLI
 
-```bash
+```
 $ npm install --global w3counter
 ```
 
-```bash
+```
 $ w3counter --help
 
-Usage
-  $ w3counter <type>
+  Usage
+    $ w3counter <type>
 
-Example
-  $ w3counter browser
-  $ w3counter country
-  $ w3counter os
-  $ w3counter res
+  Example
+    $ w3counter browser
+    $ w3counter country
+    $ w3counter os
+    $ w3counter res
 ```
+
 
 ## License
 
