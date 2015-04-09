@@ -32,8 +32,8 @@
   ],
   "dependencies": {
     "cheerio": "^0.13.1",
-    "got": "^1.0.1",
-    "meow": "^2.0.0"
+    "got": "^2.7.2",
+    "meow": "^3.1.0"
   },
   "devDependencies": {
     "ava": "^0.0.4"
