@@ -18,16 +18,7 @@ var cli = meow({
 });
 
 if (!cli.input.length) {
-	console.error([
-		'Provide a type',
-		'',
-		'Example',
-		'  $ w3counter browser',
-		'  $ w3counter country',
-		'  $ w3counter os',
-		'  $ w3counter res'
-	].join('\n'));
-
+	console.error('Provide a type');
 	process.exit(1);
 }
 
