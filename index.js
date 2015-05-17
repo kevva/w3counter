@@ -35,10 +35,13 @@ module.exports = function (type, cb) {
 
 		var $ = cheerio.load(data);
 
-		$('th').filter(function () {
-			return this.text() === method;
-		}).parent().nextAll('.item').each(function () {
-			ret.push({item: this.text(), percent: $(this).next('.pct').text()});
+		$('th').filter(function (i, el) {
+			return $(el).text() === method;
+		}).parent().nextAll('tr').each(function (i, el) {
+			ret.push({
+				item: $(el).children('.item').text(),
+				percent: $(el).children('.pct').text()
+			});
 		});
 
 		if (!ret.length) {

@@ -31,8 +31,8 @@
     "w3counter"
   ],
   "dependencies": {
-    "cheerio": "^0.13.1",
-    "got": "^2.7.2",
+    "cheerio": "^0.19.0",
+    "got": "^3.2.0",
     "meow": "^3.1.0"
   },
   "devDependencies": {
