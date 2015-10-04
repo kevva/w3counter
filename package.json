@@ -16,7 +16,7 @@
     "w3counter": "cli.js"
   },
   "scripts": {
-    "test": "ava"
+    "test": "xo && ava"
   },
   "files": [
     "cli.js",
@@ -37,6 +37,7 @@
     "pinkie-promise": "^1.0.0"
   },
   "devDependencies": {
-    "ava": "^0.2.0"
+    "ava": "^0.2.0",
+    "xo": "*"
   }
 }
