@@ -16,7 +16,7 @@
     "w3counter": "cli.js"
   },
   "scripts": {
-    "test": "node test.js"
+    "test": "ava"
   },
   "files": [
     "cli.js",
@@ -36,6 +36,6 @@
     "meow": "^3.1.0"
   },
   "devDependencies": {
-    "ava": "^0.0.4"
+    "ava": "^0.2.0"
   }
 }

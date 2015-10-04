@@ -1,40 +1,38 @@
-'use strict';
+import test from 'ava';
+import w3counter from './';
 
-var test = require('ava');
-var w3counter = require('./');
-
-test('fetch 10 web browsers', function (t) {
+test('fetch 10 web browsers', t => {
 	t.plan(2);
 
-	w3counter('browser', function (err, data) {
-		t.assert(!err, err);
-		t.assert(data.length === 10, data.length);
+	w3counter('browser', (err, data) => {
+		t.ifError(err);
+		t.is(data.length, 10);
 	});
 });
 
-test('fetch 10 countries', function (t) {
+test('fetch 10 countries', t => {
 	t.plan(2);
 
-	w3counter('country', function (err, data) {
-		t.assert(!err, err);
-		t.assert(data.length === 10, data.length);
+	w3counter('country', (err, data) => {
+		t.ifError(err);
+		t.is(data.length, 10);
 	});
 });
 
-test('fetch 10 operating systems', function (t) {
+test('fetch 10 operating systems', t => {
 	t.plan(2);
 
-	w3counter('os', function (err, data) {
-		t.assert(!err, err);
-		t.assert(data.length === 10, data.length);
+	w3counter('os', (err, data) => {
+		t.ifError(err);
+		t.is(data.length, 10);
 	});
 });
 
-test('fetch 10 screen resolutions', function (t) {
+test('fetch 10 screen resolutions', t => {
 	t.plan(2);
 
-	w3counter('res', function (err, data) {
-		t.assert(!err, err);
-		t.assert(data.length === 10, data.length);
+	w3counter('res', (err, data) => {
+		t.ifError(err);
+		t.is(data.length, 10);
 	});
 });

@@ -1,5 +1,4 @@
 'use strict';
-
 var cheerio = require('cheerio');
 var got = require('got');
 
