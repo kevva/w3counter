@@ -13,14 +13,14 @@ $ npm install --save w3counter
 ## Usage
 
 ```js
-var w3counter = require('w3counter');
+const w3counter = require('w3counter');
 
-w3counter('browser', function (err, data) {
+w3counter('browser').then(data => {
 	console.log(data);
 	//=> [{item: 'Chrome 34', percent: '20.71%'}, {item: 'Firefox 28', percent: '13.04%'}, ...]
 });
 
-w3counter('res', function (err, data) {
+w3counter('res').then(data => {
 	console.log(data);
 	//=> [{item: '1366x768', percent: '20.34%'}, {item: '1280x800', percent: '9.23%'}, ...]
 });
@@ -29,9 +29,9 @@ w3counter('res', function (err, data) {
 
 ## API
 
-### w3counter(type, callback)
+### w3counter(type)
 
-Returns an array with the ten most popular items from the type you provided from
+Returns a promise that resolves to an array with the ten most popular items from the type you provided from
 [w3counter.com](http://www.w3counter.com/globalstats.php).
 
 #### type
@@ -45,16 +45,6 @@ What type of items to get. Available types are:
 * `country` — Ten most popular countries
 * `os` — Ten most popular operating systems
 * `res` — Ten most popular screen resolutions
-
-#### callback(err, data)
-
-Type: `function`
-
-##### data
-
-Type: `array`
-
-An array of objects containing the results.
 
 
 ## CLI

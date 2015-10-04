@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 'use strict';
-
 var meow = require('meow');
 var w3counter = require('./');
 
@@ -22,14 +21,9 @@ if (!cli.input.length) {
 	process.exit(1);
 }
 
-w3counter(cli.input, function (err, types) {
-	if (err) {
-		console.error(err.message);
-		process.exit(1);
-	}
-
+w3counter(cli.input[0]).then(function (types) {
 	types.forEach(function (type, i) {
-		i = i + 1;
+		i++;
 		console.log(i + '. ' + type.item + ' (' + type.percent + ')');
 	});
 });

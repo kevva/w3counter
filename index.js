@@ -1,10 +1,11 @@
 'use strict';
 var cheerio = require('cheerio');
 var got = require('got');
+var Promise = require('pinkie-promise');
 
-module.exports = function (type, cb) {
+module.exports = function (type) {
 	if (typeof type !== 'string') {
-		throw new Error('Provide a type');
+		return Promise.reject(new TypeError('Expected a string'));
 	}
 
 	var types = {
@@ -17,22 +18,8 @@ module.exports = function (type, cb) {
 	var method = types[type];
 	var ret = [];
 
-	got('http://www.w3counter.com/globalstats.php', function (err, data) {
-		if (err) {
-			if (!isNaN(err)) {
-				err = new Error(err);
-			}
-
-			if (err.message < 200 || err.message > 299) {
-				err.message = 'Couldn\'t connect to w3counter.com';
-				err.noStack = true;
-			}
-
-			cb(err);
-			return;
-		}
-
-		var $ = cheerio.load(data);
+	return got('http://www.w3counter.com/globalstats.php').then(function (res) {
+		var $ = cheerio.load(res.body);
 
 		$('th').filter(function (i, el) {
 			return $(el).text() === method;
@@ -44,10 +31,9 @@ module.exports = function (type, cb) {
 		});
 
 		if (!ret.length) {
-			cb(new Error('Couldn\'t get any ' + method.toLowerCase()));
-			return;
+			throw new Error('Couldn\'t get any ' + method.toLowerCase());
 		}
 
-		cb(null, ret);
+		return ret;
 	});
 };
