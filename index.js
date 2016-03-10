@@ -11,7 +11,7 @@ module.exports = function (type) {
 	var types = {
 		browser: 'Web Browsers',
 		country: 'Countries',
-		os: 'Operating Systems',
+		os: 'Platforms',
 		res: 'Screen Resolutions'
 	};
 
@@ -22,7 +22,7 @@ module.exports = function (type) {
 		var $ = cheerio.load(res.body);
 
 		$('th').filter(function (i, el) {
-			return $(el).text() === method;
+			return $(el).text().replace(/^Top 10/, '').trim() === method;
 		}).parent().nextAll('tr').each(function (i, el) {
 			ret.push({
 				item: $(el).children('.item').text(),
