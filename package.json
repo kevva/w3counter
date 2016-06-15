@@ -16,11 +16,14 @@
     "w3counter": "cli.js"
   },
   "scripts": {
-    "test": "xo && ava"
+    "test": "xo && ava",
+    "prepublish": "./make.js"
   },
   "files": [
     "cli.js",
-    "index.js"
+    "index.js",
+    "data.json",
+    "lib"
   ],
   "keywords": [
     "browser",
@@ -32,12 +35,13 @@
   ],
   "dependencies": {
     "cheerio": "^0.19.0",
-    "got": "^4.2.0",
+    "got": "^5.6.0",
     "meow": "^3.1.0",
     "pinkie-promise": "^1.0.0"
   },
   "devDependencies": {
-    "ava": "^0.2.0",
+    "ava": "*",
+    "pify": "^2.3.0",
     "xo": "*"
   }
 }

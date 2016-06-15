@@ -1,6 +1,6 @@
 # w3counter [![Build Status](http://img.shields.io/travis/kevva/w3counter.svg?style=flat)](https://travis-ci.org/kevva/w3counter)
 
-> An API for w3counter to get the most popular countries, operating systems, screen resolutions and web browsers
+> An API for w3counter to get the most popular operating systems, screen resolutions and web browsers
 
 
 ## Install
@@ -42,7 +42,6 @@ Type: `string`
 What type of items to get. Available types are:
 
 * `browser` — Ten most popular web browsers
-* `country` — Ten most popular countries
 * `os` — Ten most popular operating systems
 * `res` — Ten most popular screen resolutions
 
@@ -61,7 +60,6 @@ $ w3counter --help
 
   Example
     $ w3counter browser
-    $ w3counter country
     $ w3counter os
     $ w3counter res
 ```
