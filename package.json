@@ -1,7 +1,7 @@
 {
   "name": "w3counter",
   "version": "2.0.1",
-  "description": "Get ten most popular screen resolutions, browsers, operating system and countries",
+  "description": "Get ten most popular screen resolutions, browsers and operating systems",
   "license": "MIT",
   "repository": "kevva/w3counter",
   "author": {
@@ -10,7 +10,7 @@
     "url": "https://github.com/kevva"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4"
   },
   "bin": {
     "w3counter": "cli.js"
@@ -35,13 +35,15 @@
   ],
   "dependencies": {
     "cheerio": "^0.19.0",
-    "got": "^5.6.0",
-    "meow": "^3.1.0",
-    "pinkie-promise": "^1.0.0"
+    "got": "^6.3.0",
+    "meow": "^3.1.0"
   },
   "devDependencies": {
     "ava": "*",
     "pify": "^2.3.0",
     "xo": "*"
+  },
+  "xo": {
+    "esnext": true
   }
 }

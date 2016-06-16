@@ -31,12 +31,11 @@ w3counter('res').then(data => {
 
 ### w3counter(type)
 
-Returns a promise that resolves to an array with the ten most popular items from the type you provided from
+Returns a promise for an array with the ten most popular items from the type you provided from
 [w3counter.com](http://www.w3counter.com/globalstats.php).
 
 #### type
 
-*Required*  
 Type: `string`
 
 What type of items to get. Available types are:
@@ -58,7 +57,7 @@ $ w3counter --help
   Usage
     $ w3counter <type>
 
-  Example
+  Examples
     $ w3counter browser
     $ w3counter os
     $ w3counter res

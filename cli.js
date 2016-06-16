@@ -1,29 +1,27 @@
 #!/usr/bin/env node
 'use strict';
-var meow = require('meow');
-var w3counter = require('./');
+const meow = require('meow');
+const w3counter = require('./');
 
-var cli = meow({
-	help: [
-		'Usage',
-		'  $ w3counter <type>',
-		'',
-		'Example',
-		'  $ w3counter browser',
-		'  $ w3counter country',
-		'  $ w3counter os',
-		'  $ w3counter res'
-	].join('\n')
-});
+const cli = meow(`
+	Usage
+	  $ w3counter <type>
+
+	Examples
+	  $ w3counter browser
+	  $ w3counter os
+	  $ w3counter res
+`);
 
 if (!cli.input.length) {
-	console.error('Provide a type');
+	console.error('Specify a type');
 	process.exit(1);
 }
 
-w3counter(cli.input[0]).then(function (types) {
-	types.forEach(function (type, i) {
-		i++;
-		console.log(i + '. ' + type.item + ' (' + type.percent + ')');
-	});
+w3counter(cli.input[0]).then(types => {
+	let i = 1;
+
+	for (const type of types) {
+		console.log(`${i++}. ${type.item} (${type.percent})`);
+	}
 });
