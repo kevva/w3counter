@@ -16,10 +16,10 @@ test('fetch 10 screen resolutions', async t => {
 	t.is(data.length, 10);
 });
 
-test('error if no type is defined', async t => {
-	try {
-		await w3counter();
-	} catch (err) {
-		t.is(err.message, 'Expected a string');
-	}
+test('error if no type is provided', async t => {
+	t.throws(w3counter(), 'Expected a string');
+});
+
+test('error if incorrect type is provided', async t => {
+	t.throws(w3counter('foo'), 'Type \'foo\' doesn\'t exist');
 });
