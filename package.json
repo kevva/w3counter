@@ -1,6 +1,6 @@
 {
   "name": "w3counter",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Get ten most popular screen resolutions, browsers and operating systems",
   "license": "MIT",
   "repository": "kevva/w3counter",
