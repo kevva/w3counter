@@ -17,9 +17,9 @@ test('fetch 10 screen resolutions', async t => {
 });
 
 test('error if no type is provided', async t => {
-	t.throws(w3counter(), 'Expected a string');
+	await t.throws(w3counter(), 'Expected a `string`, got `undefined`');
 });
 
 test('error if incorrect type is provided', async t => {
-	t.throws(w3counter('foo'), 'Type \'foo\' doesn\'t exist');
+	await t.throws(w3counter('foo'), 'Type \'foo\' doesn\'t exist');
 });

@@ -13,7 +13,7 @@ const cli = meow(`
 	  $ w3counter res
 `);
 
-if (!cli.input.length) {
+if (cli.input.length === 0) {
 	console.error('Specify a type');
 	process.exit(1);
 }
@@ -21,7 +21,7 @@ if (!cli.input.length) {
 w3counter(cli.input[0]).then(types => {
 	let i = 1;
 
-	for (const type of types) {
-		console.log(`${i++}. ${type.item} (${type.percent})`);
+	for (const x of types) {
+		console.log(`${i++}. ${x.item} (${x.percent})`);
 	}
 });

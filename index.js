@@ -4,7 +4,7 @@ const stats = require('./data.json').stats;
 
 module.exports = type => {
 	if (typeof type !== 'string') {
-		return Promise.reject(new TypeError('Expected a string'));
+		return Promise.reject(new TypeError(`Expected a \`string\`, got \`${typeof type}\``));
 	}
 
 	if (utils.types.indexOf(type) === -1) {
@@ -13,7 +13,7 @@ module.exports = type => {
 
 	return utils.load()
 		.then(stats => {
-			if (!stats[type].length) {
+			if (stats[type].length === 0) {
 				throw new Error(`Couldn't get any ${type}`);
 			}
 

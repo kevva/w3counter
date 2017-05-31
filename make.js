@@ -4,7 +4,7 @@ const fs = require('fs');
 const pify = require('pify');
 const utils = require('./lib/utils');
 
-const fsP = pify(fs, Promise);
+const fsP = pify(fs);
 
 utils.load()
 	.then(stats => {
